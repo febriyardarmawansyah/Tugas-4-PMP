@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manajemen Pemesanan Tiket Bioskop</title>
+</head>
+<body>
+    <h1>Daftar Pemesanan Tiket Bioskop</h1>
+    <a href="/add">Tambah Pemesanan</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nama</th>
+                <th>Film</th>
+                <th>Kursi</th>
+                <th>Waktu Tayang</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for booking in bookings %}
+            <tr>
+                <td>{{ booking.id }}</td>
+                <td>{{ booking.name }}</td>
+                <td>{{ booking.movie }}</td>
+                <td>{{ booking.seat }}</td>
+                <td>{{ booking.showtime }}</td>
+                <td>
+                    <a href="/edit/{{ booking.id }}">Edit</a>
+                    <a href="/delete/{{ booking.id }}" onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

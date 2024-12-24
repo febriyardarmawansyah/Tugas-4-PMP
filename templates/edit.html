@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Pemesanan</title>
+</head>
+<body>
+    <h1>Edit Pemesanan</h1>
+    <form method="POST">
+        <label>Nama:</label>
+        <input type="text" name="name" value="{{ booking.name }}" required><br>
+        <label>Film:</label>
+        <input type="text" name="movie" value="{{ booking.movie }}" required><br>
+        <label>Kursi:</label>
+        <input type="text" name="seat" value="{{ booking.seat }}" required><br>
+        <label>Waktu Tayang:</label>
+        <input type="datetime-local" name="showtime" value="{{ booking.showtime|replace(' ', 'T') }}" required><br>
+        <button type="submit">Simpan</button>
+    </form>
+</body>
+</html>
